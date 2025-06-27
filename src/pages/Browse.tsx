@@ -1,44 +1,11 @@
+import Navbar from "../components/Navbar";
 import BrowseCityWrapper from "../wrapper/BrowseCityWrapper";
 import BrowseOfficeWrapper from "../wrapper/BrowseOfficeSwapper";
 
 export default function Browse(){
     return (
       <>
-  <nav className="bg-white">
-    <div className="flex items-center justify-between w-full max-w-[1130px] py-[22px] mx-auto">
-      <a href="index.html">
-        <img src="/assets/images/logos/logo.svg" alt="logo" />
-      </a>
-      <ul className="flex items-center gap-[50px] w-fit">
-        <li>
-          <a href="">Browse</a>
-        </li>
-        <li>
-          <a href="">Popular</a>
-        </li>
-        <li>
-          <a href="">Categories</a>
-        </li>
-        <li>
-          <a href="">Events</a>
-        </li>
-        <li>
-          <a href="view-booking-details.html">My Booking</a>
-        </li>
-      </ul>
-      <a
-        href="#"
-        className="flex items-center gap-[10px] rounded-full border border-[#000929] py-3 px-5"
-      >
-        <img
-          src="/assets/images/icons/call.svg"
-          className="w-6 h-6"
-          alt="icon"
-        />
-        <span className="font-semibold">Contact Us</span>
-      </a>
-    </div>
-  </nav>
+<Navbar/>
   <header className="flex flex-col w-full">
     <section id="Hero-Banner" className="relative flex h-[720px] -mb-[93px]">
       <div
@@ -250,7 +217,85 @@ export default function Browse(){
       </div>
     </div>
   </section>
- <BrowseOfficeWrapper></BrowseOfficeWrapper>
+<BrowseOfficeWrapper></BrowseOfficeWrapper>
+            <footer className="bg-[#0D903A] py-[50px] mt-[100px]">
+                <div className="max-w-[1130px] mx-auto flex justify-between">
+                    {/* Column 1: Logo and Description */}
+                    <div className="flex flex-col gap-[20px] max-w-[300px]">
+                        <img src="/assets/images/logos/logo-white.svg" alt="logo" className="h-[34px] w-auto" />
+                        <p className="text-[#F7F7FD] leading-7">
+                            Kantor yang tepat dapat memberikan impact pekerjaan menjadi lebih baik
+                            dan sehat dalam tumbuhkan karir.
+                        </p>
+                        <div className="flex gap-[15px] mt-[10px]">
+                            <a href="#" className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-white">
+                                <img src="/assets/images/icons/facebook-black.svg" alt="facebook" className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-white">
+                                <img src="/assets/images/icons/instagram-black.svg" alt="instagram" className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-[45px] h-[45px] flex items-center justify-center rounded-full bg-white">
+                                <img src="/assets/images/icons/twitter-black.svg" alt="twitter" className="w-5 h-5" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Column 2: Quick Links */}
+                    <div className="flex flex-col gap-[20px]">
+                        <h4 className="font-bold text-xl leading-[30px] text-white">Quick Links</h4>
+                        <ul className="flex flex-col gap-[10px]">
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Browse City</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Browse Office</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">How It Works</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Company */}
+                    <div className="flex flex-col gap-[20px]">
+                        <h4 className="font-bold text-xl leading-[30px] text-white">Company</h4>
+                        <ul className="flex flex-col gap-[10px]">
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#" className="text-[#F7F7FD] hover:text-gray-300">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Contact Us */}
+                    <div className="flex flex-col gap-[20px] max-w-[250px]">
+                        <h4 className="font-bold text-xl leading-[30px] text-white">Contact Us</h4>
+                        <p className="text-[#F7F7FD] leading-7">
+                            hello@workia.com
+                        </p>
+                        <p className="text-[#F7F7FD] leading-7">
+                            Jl. Buah Batu No.123, Bandung, Jawa Barat, Indonesia
+                        </p>
+                        <p className="text-[#F7F7FD] leading-7">
+                            +62 812 3456 7890
+                        </p>
+                    </div>
+                </div>
+                <div className="mt-[50px] text-center text-[#F7F7FD] text-sm">
+                    © 2025 Workia. All rights reserved.
+                </div>
+            </footer>
 </>
 
     );

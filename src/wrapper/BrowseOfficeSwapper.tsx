@@ -1,6 +1,43 @@
+import { useEffect, useState } from "react";
 import OfficeCard from "../components/OfficeCard";
+import type { Office } from "../types/type";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import OfficeWrapperSkeleton from "../pages/skeleton/OfficeWrapperSkeleton";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function BrowseOfficeWrapper(){
+   const [offices, setOffices] = useState<Office[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    axios
+      .get(`${API_BASE_URL}/api/offices`, {
+        headers: {
+          "X-API-KEY": `${API_KEY}`,
+        },
+      })
+      .then((response) => {
+        console.log(response.data.data);
+        setOffices(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+if (loading) {
+    return <OfficeWrapperSkeleton/>
+  }
+
+  if(error){
+    return <p>Error Loading data {error}</p>
+  }
     return(
          <section
     id="Fresh-Space"
@@ -11,8 +48,13 @@ export default function BrowseOfficeWrapper(){
       <br />
       For Your Better Productivity.
     </h2>
-    <div className="grid grid-cols-3 gap-[30px]">
-     <OfficeCard></OfficeCard>
+    <div className="grid grid-cols-3 gap-[15px]">
+      
+    {offices.map((office)=>(
+      <Link key={office.id}  to={`/office/${office.slug}`}>
+       <OfficeCard office={office}></OfficeCard>
+      </Link>
+    ))}
     </div>
   </section>
     )
