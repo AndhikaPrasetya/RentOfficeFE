@@ -3,6 +3,7 @@ import OfficeCard from "../components/OfficeCard";
 import type { Office } from "../types/type";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import OfficeWrapperSkeleton from "../pages/skeleton/OfficeWrapperSkeleton";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -31,21 +32,7 @@ export default function BrowseOfficeWrapper(){
   }, []);
 
 if (loading) {
-    return (
-      <section id="Fresh-Space"
-    className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[100px] mb-[120px]">
-        <div className="w-full max-w-[1000px] mx-auto">
-          <div className="animate-pulse">
-            <div className="h-12 bg-gray-200 rounded mb-8"></div>
-            <div className="flex justify-between">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="w-64 h-100 bg-gray-200 rounded"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    );
+    return <OfficeWrapperSkeleton/>
   }
 
   if(error){
@@ -64,8 +51,8 @@ if (loading) {
     <div className="grid grid-cols-3 gap-[15px]">
       
     {offices.map((office)=>(
-      <Link to={`/office/${office.slug}`}>
-       <OfficeCard key={office.id} office={office}></OfficeCard>
+      <Link key={office.id}  to={`/office/${office.slug}`}>
+       <OfficeCard office={office}></OfficeCard>
       </Link>
     ))}
     </div>

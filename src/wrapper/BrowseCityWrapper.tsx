@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { City } from "../types/type";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CityWrapperSkeleton from "../pages/skeleton/CityWrapperSkeleton";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -33,24 +34,8 @@ export default function BrowseCityWrapper() {
   }, []);
 
 if (loading) {
-    console.log("📊 Component rendering: Loading state");
-    return (
-      <section id="Cities" className="flex flex-col gap-[30px] mt-[100px]">
-        <div className="w-full max-w-[1000px] mx-auto">
-          <div className="animate-pulse">
-            <div className="h-12 bg-gray-200 rounded mb-8"></div>
-            <div className="flex gap-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-64 h-48 bg-gray-200 rounded"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    );
+    return <CityWrapperSkeleton/>
   }
-
-
 
   if(error){
     return <p>Error Loading data {error}</p>
@@ -74,10 +59,10 @@ if (loading) {
         <div className="swiper-wrapper">
           <Swiper
             direction="horizontal"
-            spaceBetween={30}
+            spaceBetween={10}
             slidesPerView="auto"
-            slidesOffsetAfter={30}
-            slidesOffsetBefore={30}
+            slidesOffsetAfter={10}
+            slidesOffsetBefore={10}
           >
           {cities.map((city)=>(
             <SwiperSlide key={city.id} className=" !w-fit first-of-type:pl-[calc((100%-1130px-60px)/2)] last-of-type:pr-[calc((100%-1130px-60px)/2)]">

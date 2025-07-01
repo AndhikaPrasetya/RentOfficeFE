@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import OfficeCard from "../components/OfficeCard";
 import type { City } from "../types/type";
+import CityDetailsSkeleton from "./skeleton/CityDetailsSkeleton";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 
 export default function CityDetails(){
     
@@ -14,9 +19,9 @@ export default function CityDetails(){
    
     useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/city/${slug}`, {
+      .get(`${API_BASE_URL}/api/city/${slug}`, {
         headers: {
-          "X-API-KEY": "asdsad2313xsdda",
+          "X-API-KEY": `${API_KEY}`,
         },
       })
       .then((response) => {
@@ -31,7 +36,7 @@ export default function CityDetails(){
   }, []);
 
    if(loading){
-    return <p>Loading...</p>
+    return <CityDetailsSkeleton></CityDetailsSkeleton>
    }
 
    if(error){
