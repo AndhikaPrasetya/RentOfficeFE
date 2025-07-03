@@ -36,7 +36,7 @@ export interface City {
 export interface BookingDetails {
   id: number;
   name: string;
-  phonr_number: string;
+  phone_number: string;
   booking_trx_id: string;
   is_paid: boolean;
   duration: number;

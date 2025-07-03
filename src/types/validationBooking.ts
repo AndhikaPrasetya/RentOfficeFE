@@ -8,6 +8,6 @@ export const bookingSchema = z.object ({
 });
 
 export const viewBookingSchema = z.object({
-    bking_trx_id : z.string().min(1, "Booking TRX is required"),
+    booking_trx_id : z.string().min(1, "Booking TRX is required"),
      phone_number:z.string().min(1,"phone number is required"),
 });

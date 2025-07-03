@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import type { z } from "zod";
 import { bookingSchema } from "../types/validationBooking";
-import { maximum } from "zod/v4-mini";
 import BookingSkeleton from "./skeleton/BookingSkeleton";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -118,7 +117,7 @@ export function BookOffice() {
       navigate("/success-booking", {
         state: {
           office,
-          booking: response.data,
+          booking: response.data.data,
         },
       });
     } catch (error: unknown) {
