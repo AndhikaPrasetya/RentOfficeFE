@@ -78,7 +78,7 @@ export default function CityDetails(){
     </section>
   </header>
   <section
-    id="Fresh-Space"
+    id="Fresh"
     className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[70px] mb-[120px]"
   >
     <h2 className="font-bold text-[32px] leading-[48px] text-nowrap">
