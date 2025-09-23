@@ -51,7 +51,7 @@ export function SuccessBooking() {
           <div>
             <p className="font-bold">{booking.booking_trx_id}</p>
             <p className="text-sm leading-[21px] mt-[2px]">
-              Save your booking ID securely
+              Save your booking ID 
             </p>
           </div>
         </div>
