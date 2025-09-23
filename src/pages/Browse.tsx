@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import BrowseCityWrapper from "../wrapper/BrowseCityWrapper";
 import BrowseOfficeWrapper from "../wrapper/BrowseOfficeSwapper";
@@ -299,4 +300,5 @@ export default function Browse(){
 </>
 
     );
+
 }

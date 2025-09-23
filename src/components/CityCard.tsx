@@ -1,3 +1,4 @@
+
 import type { City } from "../types/type";
 
 export default function CityCard({city}:CityCardProps){
@@ -23,4 +24,5 @@ export default function CityCard({city}:CityCardProps){
 
 interface CityCardProps {
   city:City
+
 }

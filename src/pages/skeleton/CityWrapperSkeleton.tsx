@@ -1,3 +1,4 @@
+
 export default function CityWrapperSkeleton(){
      return (
       <section id="Cities" className="flex flex-col gap-[30px] mt-[100px]">
@@ -24,4 +25,5 @@ export default function CityWrapperSkeleton(){
         </div>
       </section>
     );
+
 }

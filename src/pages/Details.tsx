@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
@@ -384,3 +385,4 @@ export function Details() {
     </>
   );
 }
+
