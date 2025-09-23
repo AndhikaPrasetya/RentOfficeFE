@@ -1,3 +1,4 @@
+
 export default function BookingSkeleton() {
     return(
         <>
@@ -170,4 +171,5 @@ export default function BookingSkeleton() {
   </div>
 </>
     )
+
 }

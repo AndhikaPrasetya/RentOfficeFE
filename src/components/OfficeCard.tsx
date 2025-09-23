@@ -1,3 +1,4 @@
+
 import type { Office } from "../types/type";
 
 export default function OfficeCard({ office }: officeCardProps) {
@@ -83,3 +84,4 @@ export default function OfficeCard({ office }: officeCardProps) {
 interface officeCardProps {
   office: Office;
 }
+

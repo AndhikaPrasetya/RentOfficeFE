@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Navbar from '../../components/Navbar';
 
@@ -152,5 +153,6 @@ function OfficeDetailSkeleton() {
     </>
   );
 }
+
 
 export default OfficeDetailSkeleton;

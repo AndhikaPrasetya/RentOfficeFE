@@ -1,3 +1,4 @@
+
 export default function OfficeWrapperSkeleton(){
         return (
       <section id="Fresh-Space"
@@ -18,4 +19,5 @@ export default function OfficeWrapperSkeleton(){
         </div>
       </section>
     );
+
 }

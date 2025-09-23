@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import type { Office } from "../types/type";
 import { useNavigate, useParams } from "react-router-dom";
@@ -392,3 +393,4 @@ export function BookOffice() {
     </>
   );
 }
+

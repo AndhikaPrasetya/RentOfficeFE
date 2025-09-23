@@ -1,4 +1,5 @@
-import { Link, Links, useParams } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -86,9 +87,7 @@ export default function CityDetails(){
     </h2>
     <div className="grid grid-cols-3 gap-[30px]">
       {city.officeSpaces.map((office)=>(
-        <Link to={`/office/${office.slug}`}>
-          <OfficeCard key={office.id} office={office}></OfficeCard>
-        </Link>
+            <OfficeCard key={office.id} office={office}></OfficeCard>
          ))}
     </div>
   </section>

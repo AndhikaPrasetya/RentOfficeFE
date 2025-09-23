@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import OfficeCard from "../components/OfficeCard";
 import type { Office } from "../types/type";
