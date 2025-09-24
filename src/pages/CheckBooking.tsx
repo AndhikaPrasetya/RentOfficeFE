@@ -64,7 +64,7 @@ export function CheckBooking() {
         setError(error.message);
       } else {
         console.log(error);
-        setError("An unexpected error occurred");
+        setError("An unexpected error");
       }
     } finally {
       setIsLoading(false);
