@@ -12,7 +12,7 @@ export function CheckBooking() {
 
   const [formData, setFormData] = useState({
     phone_number: "",
-    booking_trx_id: "",
+    booking_trx: "",
   });
 
   const [formErrors, setFormErrors] = useState<z.ZodIssue[]>([]);
